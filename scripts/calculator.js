@@ -9,7 +9,7 @@ const calculator = {
     return a * b;
   },
   divide: function (a, b) {
-    if (b === 0 && a !== 0) {
+    if (a !== 0 && b === 0) {
       throw new Error("Cannot divide by zero");
     } else if (a === 0 && b === 0) {
       throw new Error("Cannot divide by zero");

@@ -1,12 +1,23 @@
 const alphabet = "abcdefghijklmnopqrstuvwxyz";
 
-function generateCaesarCipher(text, shiftValue) {
+function generateCaesarCipher(text, shift) {
+  if (shift === 0) {
+    return text;
+  } else if (shift === undefined || shift === null || shift === "") {
+    return text;
+  }
+
   let cipheredMessage = "";
+  let shiftValue = Math.round(shift);
 
   if (typeof text !== "string" || isNaN(text) === false) {
     throw new Error("Text must be a string");
   } else if (typeof shiftValue === "string") {
-    throw new Error("Shift value must be a number");
+    return parseInt(shiftValue);
+  } else if (shiftValue > 26 && shiftValue !== 0) {
+    throw new Error("Shift value must be between 26 and -26");
+  } else if (shiftValue < -26 && shiftValue !== 0) {
+    throw new Error("Shift value must be between 26 and -26");
   }
 
   for (let i = 0; i < text.length; i++) {
