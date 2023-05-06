@@ -4,7 +4,7 @@ function capitalizeFirstLetter(string) {
   if (typeof string !== "string" || string.trim().length === 0) {
     throw new Error("Please provide a string");
   }
-  // determines where the first non-whitespace character is
+  // determines where the first non-whitespace letteracter is
   const firstNonWhitespaceIndex = string.search(/\S/);
   //seperates the first letter from the rest of the string and capitalizes it
   const firstLetter = string.charAt(firstNonWhitespaceIndex).toUpperCase();
@@ -22,18 +22,16 @@ function reverseString(string) {
     throw new Error("Please provide a string");
   }
   // Trim leading and trailing whitespace
-  const trimmedStr = string.trim();
+  const trimmedString = string.trim();
 
   // Reverse the string
-  const reversedStr = trimmedStr.split("").reverse().join("");
+  const reversedString = trimmedString.split("").reverse().join("");
 
   // Add back leading and trailing whitespace
   const leadingWhitespace = string.match(/^\s*/)[0];
   const trailingWhitespace = string.match(/\s*$/)[0];
   //return the reversed string with the leading and trailing whitespace
-  return leadingWhitespace + reversedStr + trailingWhitespace;
+  return leadingWhitespace + reversedString + trailingWhitespace;
 }
-
-//3.
 
 module.exports = { capitalizeFirstLetter, reverseString };

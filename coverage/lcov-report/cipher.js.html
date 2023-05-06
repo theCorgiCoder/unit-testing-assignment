@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for strings.js</title>
+    <title>Code coverage report for cipher.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="prettify.css" />
     <link rel="stylesheet" href="base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="index.html">All files</a> strings.js</h1>
+        <h1><a href="index.html">All files</a> cipher.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13/13</span>
+                <span class='fraction'>19/19</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>8/8</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>13/13</span>
+                <span class='fraction'>18/18</span>
             </div>
         
             
@@ -93,87 +93,66 @@
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a>
 <a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a>
-<a name='L37'></a><a href='#L37'>37</a>
-<a name='L38'></a><a href='#L38'>38</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">101x</span>
+<span class="cline-any cline-yes">101x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">87x</span>
+<span class="cline-any cline-yes">87x</span>
+<span class="cline-any cline-yes">87x</span>
+<span class="cline-any cline-yes">87x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">87x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// 1. Returns string with first letter capitalized
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const alphabet = "abcdefghijklmnopqrstuvwxyz";
 &nbsp;
-function capitalizeFirstLetter(string) {
-  if (typeof string !== "string" || string.trim().length === 0) {
-    throw new Error("Please provide a string");
+function generateCaesarCipher(text, shiftValue) {
+  let cipheredMessage = "";
+&nbsp;
+  if (typeof text !== "string" || isNaN(text) === false) {
+    throw new Error("Text must be a string");
+  } else if (typeof shiftValue === "string") {
+    throw new Error("Shift value must be a number");
   }
-  // determines where the first non-whitespace letteracter is
-  const firstNonWhitespaceIndex = string.search(/\S/);
-  //seperates the first letter from the rest of the string and capitalizes it
-  const firstLetter = string.charAt(firstNonWhitespaceIndex).toUpperCase();
-  //returns the string with the first letter capitalized and combines with rest of string with included spaces
-  return (
-    string.slice(0, firstNonWhitespaceIndex) +
-    firstLetter +
-    string.slice(firstNonWhitespaceIndex + 1)
-  );
+&nbsp;
+  for (let i = 0; i &lt; text.length; i++) {
+    let letter = text[i]; //iterates through each letter in the text and assigns it an index storing inside letter variable
+    if (letter.match(/[a-z]/i)) {
+      //iterates through each letter in the text to determine if it is a letter
+      const index = alphabet.indexOf(letter.toLowerCase());
+      const newIndex = (index + shiftValue) % alphabet.length;
+      let newletter = alphabet[newIndex];
+      if (letter === letter.toUpperCase()) {
+        newletter = newletter.toUpperCase();
+      }
+      cipheredMessage += newletter;
+    } else {
+      cipheredMessage += letter;
+    }
+  }
+  return cipheredMessage;
 }
 &nbsp;
-//2. Reverse String Function
-function reverseString(string) {
-  if (typeof string !== "string" || string.trim().length === 0) {
-    throw new Error("Please provide a string");
-  }
-  // Trim leading and trailing whitespace
-  const trimmedString = string.trim();
-&nbsp;
-  // Reverse the string
-  const reversedString = trimmedString.split("").reverse().join("");
-&nbsp;
-  // Add back leading and trailing whitespace
-  const leadingWhitespace = string.match(/^\s*/)[0];
-  const trailingWhitespace = string.match(/\s*$/)[0];
-  //return the reversed string with the leading and trailing whitespace
-  return leadingWhitespace + reversedString + trailingWhitespace;
-}
-&nbsp;
-module.exports = { capitalizeFirstLetter, reverseString };
+module.exports = { generateCaesarCipher, alphabet };
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->

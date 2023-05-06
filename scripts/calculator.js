@@ -27,6 +27,4 @@ function doCalculation(a, b, operation) {
   return operation(parseFloat(a), parseFloat(b));
 }
 
-console.log(doCalculation(1.00066777, 0, calculator.multiply));
-
 module.exports = { doCalculation, calculator };

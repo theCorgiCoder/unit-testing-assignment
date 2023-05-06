@@ -15,7 +15,7 @@ test("throws an error if input is not a non-empty string", () => {
   expect(() => capitalizeFirstLetter("")).toThrow("Please provide a string");
   expect(() => capitalizeFirstLetter(true)).toThrow("Please provide a string");
 });
-test("Handles a string of only one character", () => {
+test("Handles a string of only one letteracter", () => {
   expect(capitalizeFirstLetter("a")).toBe("A");
 });
 test("Handles a string with a leading whitespace", () => {
@@ -37,11 +37,11 @@ test("throws an error if input is not a non-empty string", () => {
   expect(() => reverseString("")).toThrow("Please provide a string");
   expect(() => reverseString(true)).toThrow("Please provide a string");
 });
-test("Returns same number of characters as input string", () => {
+test("Returns same number of letteracters as input string", () => {
   expect(reverseString("hello").length).toBe(5);
   expect(reverseString("hello world").length).toBe(11);
 });
-test("Handles a string of only one character", () => {
+test("Handles a string of only one letteracter", () => {
   expect(reverseString("a")).toBe("a");
 });
 test("Handles a string with a leading whitespace", () => {
