@@ -1,6 +1,5 @@
 const { generateCaesarCipher, alphabet } = require("../scripts/cipher.js");
 
-//Test that cipher works with a shift of 1
 test("cipher works with a shift of 1", () => {
   expect(generateCaesarCipher("guineapig", 1)).toBe("hvjofbqjh");
 });
@@ -56,4 +55,9 @@ test("If shiftValue is less than -26, it wraps around to the end of the alphabet
 });
 test("If shiftValue is a decimal, it is rounded to the nearest integer", () => {
   expect(generateCaesarCipher("hello", 2.5)).toBe("khoor");
+});
+test("if text includes symbols or numbers, they are not ciphered", () => {
+  expect(generateCaesarCipher("hello, world!", 3)).toBe("khoor, zruog!");
+  expect(generateCaesarCipher("h3lLo, woRld!", 3)).toBe("k3oOr, zrUog!");
+  expect(generateCaesarCipher("h3lLo, woRld!", "3")).toBe("k3oOr, zrUog!");
 });
